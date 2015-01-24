@@ -5,7 +5,7 @@ var endPoint : Vector3;
 var speed : float;
 private var increment:float;
 var isMoving : boolean;
-var currentDirection : float;
+public static var currentDirection : float = 1;
 
 function Start () {
 	startPoint = transform.position;
@@ -15,7 +15,7 @@ function Start () {
 function Update () {
 	if (increment <=1 && isMoving == true) {
 		increment += speed/100;
-		Debug.Log("Moving");
+		// Debug.Log("Moving");
 	}
 	else {
 		isMoving = false;
