@@ -37,7 +37,6 @@ function OnBecameInvisible() {
 function OnTriggerEnter2D(obj : Collider2D) {  
     var name = obj.gameObject.name.ToLower();
 	
-	
     // If it collided with a wall
     if (name.Contains("wall")) {
         // Destroy itself (the enemy)
