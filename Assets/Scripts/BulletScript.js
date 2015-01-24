@@ -35,11 +35,17 @@ function OnBecameInvisible() {
 
 // Function called when the bullet collides with another object
 function OnTriggerEnter2D(obj : Collider2D) {  
-    var name = obj.gameObject.name;
-
+    var name = obj.gameObject.name.ToLower();
+	
+	
     // If it collided with a wall
-    if (name.ToLower().Contains("wall")) {
+    if (name.Contains("wall")) {
         // Destroy itself (the enemy)
         Destroy(gameObject);
+        
+   		// If the bullet hits a wood wall, destroy part of the wooden wall
+   		if (name.Contains("wood")) {
+   			Destroy(obj.gameObject);
+   		}
     }
 }

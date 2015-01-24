@@ -19,7 +19,7 @@ function Fire() {
     if (Input.GetKeyDown(KeyCode.Space)) {
         // Create a new bullet at “transform.position”
         // Which is the current position of the ship
-        Instantiate(bullet, transform.position, Quaternion.identity);
+        Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z + 0.5), Quaternion.identity);
 		coolDown = Time.time + attackSpeed;
     }
 }
