@@ -36,14 +36,13 @@ function Update () {
 			// to the floating height.
 			var distance = Mathf.Abs(hit.point.y - transform.position.y);
 			Debug.Log("raycasting - distance " + distance);
-			
-			// Allow movement only if a collision wall is not beside the unit
-			if (distance > 1.25) {
-				increment = 0;
-				isMoving = true;
-				startPoint = transform.position;
-				endPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-			}
+		}
+		// Allow movement only if a collision wall is not beside the unit
+		if (hit.collider == null || distance > 1.25) {
+			increment = 0;
+			isMoving = true;
+			startPoint = transform.position;
+			endPoint = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
 		}
 		currentDirection = 1;
 	}
@@ -58,14 +57,13 @@ function Update () {
 			// to the floating height.
 			distance = Mathf.Abs(-hit2.point.y + transform.position.y);
 			Debug.Log("raycasting - distance " + distance);
-			
-			// Allow movement only if a collision wall is not beside the unit
-			if (distance > 1.25) {
-				increment = 0;
-				isMoving = true;
-				startPoint = transform.position;
-				endPoint = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
-			}
+		}
+		// Allow movement only if a collision wall is not beside the unit
+		if (hit2.collider == null || distance > 1.25) {
+			increment = 0;
+			isMoving = true;
+			startPoint = transform.position;
+			endPoint = new Vector3(transform.position.x, transform.position.y - 1, transform.position.z);
 		}
 		currentDirection = 3;
 	}
@@ -80,14 +78,13 @@ function Update () {
 			// to the floating height.
 			distance = Mathf.Abs(-hit3.point.x + transform.position.x);
 			Debug.Log("raycasting - distance " + distance);
-			
-			// Allow movement only if a collision wall is not beside the unit
-			if (distance > 1.25) {
-				increment = 0;
-				isMoving = true;
-				startPoint = transform.position;
-				endPoint = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
-			}
+		}
+		// Allow movement only if a collision wall is not beside the unit
+		if (hit3.collider == null || distance > 1.25) {
+			increment = 0;
+			isMoving = true;
+			startPoint = transform.position;
+			endPoint = new Vector3(transform.position.x - 1, transform.position.y, transform.position.z);
 		}
 		currentDirection = 2;
 	}
@@ -102,14 +99,13 @@ function Update () {
 			// to the floating height.
 			distance = Mathf.Abs(hit4.point.x - transform.position.x);
 			Debug.Log("raycasting - distance " + distance);
-			
-			// Allow movement only if a collision wall is not beside the unit
-			if (distance > 1.25) {
-				increment = 0;
-				isMoving = true;
-				startPoint = transform.position;
-				endPoint = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
-			}
+		}
+		// Allow movement only if a collision wall is not beside the unit
+		if (hit4.collider == null || distance > 1.25) {
+			increment = 0;
+			isMoving = true;
+			startPoint = transform.position;
+			endPoint = new Vector3(transform.position.x + 1, transform.position.y, transform.position.z);
 		}
 		currentDirection = 4;
 	}
