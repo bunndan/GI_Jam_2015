@@ -49,8 +49,8 @@ function OnTriggerEnter2D(obj : Collider2D) {
    		
    		// Game is over if the bullet hits the base
    		if (name.Contains("base")) {
-   			Debug.Log("GAME OVER");
    			Destroy(obj.gameObject);
+			gameObject.GetComponent(GameOverScript).gameOver();
    		}
     }
 }

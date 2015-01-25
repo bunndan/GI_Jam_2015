@@ -16,7 +16,7 @@ function Start() {
 // New function to spawn an enemy
 function addEnemy() {
 	var nums = gameObject.GetComponent(GameManagerScript).numOfEnemies;
-	if (nums <= totalNumberOfEnemies) {
+	if (nums < totalNumberOfEnemies) {
 	    var spawnPoint = transform.position;
 		gameObject.GetComponent(GameManagerScript).numOfEnemies++;
 		

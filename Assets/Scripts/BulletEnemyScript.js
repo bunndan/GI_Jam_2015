@@ -59,12 +59,16 @@ function OnTriggerEnter2D(obj : Collider2D) {
    		if (name.Contains("base")) {
    			Debug.Log("GAME OVER");
    			Destroy(obj.gameObject);
+			gameObject.GetComponent(GameOverScript).gameOver();
    		}
+    }
+    if (name.Contains("playerbullet")) {
+    	Destroy(gameObject);
+   		Destroy(obj.gameObject);
     }
     if (name.Contains("player")) {
     	Destroy(gameObject);
     	// Destroy the player
     	Destroy(obj.gameObject);
-    	gameObject.GetComponent(PlayerStats2D).playerAlive = false;
     }
 }

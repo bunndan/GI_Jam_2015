@@ -18,7 +18,8 @@ function spawnPlayer() {
 
 	var lives       = gameObject.GetComponent(PlayerStats2D).lives;
 	var playerAlive = gameObject.GetComponent(PlayerStats2D).playerAlive;
-	if (playerAlive == false) {
+	var baseAlive   = gameObject.GetComponent(PlayerStats2D).baseAlive;
+	if (playerAlive == false && baseAlive == true) {
 		Debug.Log("lives = " + lives);
 		if (lives > 0) {
 		    var spawnPoint = transform.position;
@@ -28,7 +29,9 @@ function spawnPlayer() {
 		    Instantiate(player, spawnPoint, Quaternion.identity);
 		    gameObject.GetComponent(PlayerStats2D).playerAlive = true;
 		} else {
+			baseAlive = false;
 			Debug.Log("Invoke GAME OVER sequence");
+			gameObject.GetComponent(GameOverScript).gameOver();
 		}
 	}
 }

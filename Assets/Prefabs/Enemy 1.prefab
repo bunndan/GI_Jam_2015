@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21, y: -31, z: 0}
+  m_LocalPosition: {x: 21, y: -31, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -139,6 +139,10 @@ MonoBehaviour:
   currentDirection: 3
   bullet: {fileID: 100000, guid: f5e9a38bfcfb143459f64fa88b2f61dd, type: 2}
   shootTime: 5
+  spriteImageUp: {fileID: 0}
+  spriteImageDown: {fileID: 0}
+  spriteImageLeft: {fileID: 0}
+  spriteImageRight: {fileID: 0}
   objs: []
   SpawnPoint: {fileID: 0}
 --- !u!114 &11400006

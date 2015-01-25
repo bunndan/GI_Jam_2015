@@ -11,12 +11,23 @@ public var bullet : GameObject;
 // Variable to know how fast we should shoot
 public var shootTime : float = 2;
 
+var spriteImageUp : Sprite;
+var spriteImageDown : Sprite;
+var spriteImageLeft : Sprite;
+var spriteImageRight : Sprite;
+
+
 // Function called when the enemy is created
 function Start () {
     randomizeDirection();
     this.transform.FindChild("FrontCollider").gameObject.GetComponent(EnemyColliderScript).colliderChange();
     
     InvokeRepeating("fire", shootTime, shootTime);
+    
+    spriteImageUp    = Resources.Load("enemy2_v1_up", typeof(Sprite)) as Sprite;
+    spriteImageDown  = Resources.Load("enemy2_v1_down", typeof(Sprite)) as Sprite;
+    spriteImageLeft  = Resources.Load("enemy2_v1_left", typeof(Sprite)) as Sprite;
+    spriteImageRight = Resources.Load("enemy2_v1_right", typeof(Sprite)) as Sprite;
 }
 
 function randomizeDirection() {
@@ -73,18 +84,22 @@ function addVelociy() {
 	// Debug.Log("moving");
 	// Debug.Log("Adding velocity = " + currentDirection);
 	if (currentDirection == 1) {		// up
+	    GetComponent(SpriteRenderer).sprite = spriteImageUp;
     	rigidbody2D.velocity.x = 0;
     	rigidbody2D.velocity.y = -speed;
     	
     } else if (currentDirection == 2) {	// left
+	    GetComponent(SpriteRenderer).sprite = spriteImageLeft;
     	rigidbody2D.velocity.x = speed;
     	rigidbody2D.velocity.y = 0;
 		
     } else if (currentDirection == 3) {	// down
+	    GetComponent(SpriteRenderer).sprite = spriteImageDown;
     	rigidbody2D.velocity.x = 0;
     	rigidbody2D.velocity.y = speed;
     	
     } else if (currentDirection == 4) {	// right
+	    GetComponent(SpriteRenderer).sprite = spriteImageRight;
     	rigidbody2D.velocity.x = -speed;
     	rigidbody2D.velocity.y = 0;
     	
