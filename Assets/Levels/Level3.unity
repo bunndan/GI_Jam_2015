@@ -996,6 +996,7 @@ GameObject:
   - 212: {fileID: 49733666}
   - 114: {fileID: 49733665}
   - 114: {fileID: 49733664}
+  - 61: {fileID: 49733667}
   m_Layer: 0
   m_Name: Spawn_bottomright
   m_TagString: Untagged
@@ -1014,7 +1015,7 @@ Transform:
   m_LocalScale: {x: .122220002, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578503778}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &49733664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1028,7 +1029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 100002, guid: 7211ac9a366734b4bb08395f433f87c9, type: 2}
   spawnTime: 5
-  totalNumberOfEnemies: 1
+  totalNumberOfEnemies: 3
 --- !u!114 &49733665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1063,6 +1064,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 970641961321b9d48bffee0da7fe5d0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &49733667
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 49733662}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 16, y: 2}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &51432456
 GameObject:
   m_ObjectHideFlags: 0
@@ -9798,6 +9810,7 @@ GameObject:
   - 212: {fileID: 806716171}
   - 114: {fileID: 806716170}
   - 114: {fileID: 806716169}
+  - 61: {fileID: 806716172}
   m_Layer: 0
   m_Name: Spawn_bottomleft
   m_TagString: Untagged
@@ -9816,7 +9829,7 @@ Transform:
   m_LocalScale: {x: .122220002, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578503778}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!114 &806716169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9830,7 +9843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 100002, guid: 7211ac9a366734b4bb08395f433f87c9, type: 2}
   spawnTime: 5
-  totalNumberOfEnemies: 1
+  totalNumberOfEnemies: 3
 --- !u!114 &806716170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9865,6 +9878,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 970641961321b9d48bffee0da7fe5d0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &806716172
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806716167}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 16, y: 2}
+  m_Center: {x: -1.90734863e-06, y: 0}
 --- !u!1 &811949822
 GameObject:
   m_ObjectHideFlags: 0
@@ -10584,6 +10608,10 @@ Prefab:
     - target: {fileID: 400000, guid: b4ba779ef534da448bffdd124712d404, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b4ba779ef534da448bffdd124712d404, type: 2}
+      propertyPath: totalNumberOfEnemies
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4ba779ef534da448bffdd124712d404, type: 2}
@@ -18619,6 +18647,7 @@ GameObject:
   - 212: {fileID: 1544298308}
   - 114: {fileID: 1544298307}
   - 114: {fileID: 1544298306}
+  - 61: {fileID: 1544298309}
   m_Layer: 0
   m_Name: Spawn_toprleft
   m_TagString: Untagged
@@ -18650,8 +18679,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 100002, guid: 7211ac9a366734b4bb08395f433f87c9, type: 2}
-  spawnTime: 2
-  totalNumberOfEnemies: 1
+  spawnTime: 5
+  totalNumberOfEnemies: 3
 --- !u!114 &1544298307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18686,6 +18715,17 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 970641961321b9d48bffee0da7fe5d0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!61 &1544298309
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1544298304}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 16, y: 2}
+  m_Center: {x: -1.90734863e-06, y: 0}
 --- !u!1 &1544830840
 GameObject:
   m_ObjectHideFlags: 0
@@ -19326,8 +19366,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2066357473}
-  - {fileID: 49733663}
   - {fileID: 806716168}
+  - {fileID: 49733663}
   - {fileID: 1544298305}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -24405,6 +24445,7 @@ GameObject:
   - 212: {fileID: 2066357472}
   - 114: {fileID: 2066357474}
   - 114: {fileID: 2066357475}
+  - 61: {fileID: 2066357476}
   m_Layer: 0
   m_Name: Spawn_topright
   m_TagString: Untagged
@@ -24474,7 +24515,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemy: {fileID: 100002, guid: 7211ac9a366734b4bb08395f433f87c9, type: 2}
   spawnTime: 5
-  totalNumberOfEnemies: 1
+  totalNumberOfEnemies: 3
+--- !u!61 &2066357476
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2066357471}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: 16, y: 2}
+  m_Center: {x: 0, y: 0}
 --- !u!1 &2067237440
 GameObject:
   m_ObjectHideFlags: 0

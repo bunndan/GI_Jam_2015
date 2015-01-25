@@ -65,4 +65,7 @@ function OnTriggerEnter2D(obj : Collider2D) {
     	Destroy(gameObject);
    		Destroy(obj.gameObject);
     }
+    if (name.Contains("enemy")) {
+    	Destroy(gameObject);
+    }
 }

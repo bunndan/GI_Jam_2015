@@ -20,10 +20,10 @@ function spawnPlayer() {
 	var playerAlive = gameObject.GetComponent(PlayerStats2D).playerAlive;
 	var baseAlive   = gameObject.GetComponent(PlayerStats2D).baseAlive;
 	
-	Debug.Log("playerAlive = " + playerAlive + "  |  base = "+baseAlive);
+	//Debug.Log("playerAlive = " + playerAlive + "  |  base = "+baseAlive);
 	
 	if (playerAlive == false && baseAlive == true) {
-		Debug.Log("lives = " + lives);
+		// Debug.Log("lives = " + lives);
 		if (lives > 0) {
 		    var spawnPoint = transform.position;
 			gameObject.GetComponent(PlayerStats2D).lives--;

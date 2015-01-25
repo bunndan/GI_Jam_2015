@@ -5,7 +5,7 @@ public var enemy : GameObject;
 
 // Variable to know how fast we should create new enemies
 public var spawnTime : float = 6;
-public var totalNumberOfEnemies = 10;
+public var totalNumberOfEnemies = 3;
 
 function Start() {  
     // Call the 'addEnemy' function every 'spawnTime' seconds
@@ -15,12 +15,14 @@ function Start() {
 
 // New function to spawn an enemy
 function addEnemy() {
+	
+	var randomNum = Mathf.Floor(Random.Range(1,3));
 	var nums = gameObject.GetComponent(GameManagerScript).numOfEnemies;
-	if (nums < totalNumberOfEnemies) {
-	    var spawnPoint = transform.position;
-		gameObject.GetComponent(GameManagerScript).numOfEnemies++;
+	if (randomNum == 1 && nums < totalNumberOfEnemies) {
+		var spawnPoint = transform.position;
 		
 	    // Create an enemy at the 'spawnPoint' position
 	    Instantiate(enemy, spawnPoint, Quaternion.identity);
+		gameObject.GetComponent(GameManagerScript).numOfEnemies++;
 	}
 }

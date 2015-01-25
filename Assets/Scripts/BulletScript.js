@@ -37,7 +37,7 @@ function OnTriggerEnter2D(obj : Collider2D) {
         Destroy(gameObject);
         
    		// If the bullet hits a wood wall, destroy part of the wooden wall
-   		if (name.Contains("wood")) {
+   		if (name.Contains("wood") || name.Contains("letter")) {
    			Destroy(obj.gameObject);
    		}
    		
@@ -46,5 +46,9 @@ function OnTriggerEnter2D(obj : Collider2D) {
    			Destroy(obj.gameObject);
    			GameObject.Find("Game_Over").GetComponent(GameOverScript).gameOver();
    		}
+    }
+    if (name.Contains("title")) {
+    	Destroy(gameObject);
+    	Destroy(obj.gameObject);
     }
 }

@@ -13,7 +13,7 @@ function OnTriggerEnter2D(obj : Collider2D) {
     var name = obj.gameObject.name.ToLower();
 
     // If it collided with a bullet
-    if (name.Contains("wall") || name.Contains("enemy") || name.Contains("player")) {
+    if (name.Contains("wall") || name.Contains("enemy") || name.Contains("player") || name.Contains("spawn")) {
     	// Debug.Log("hit wall");
         
         // Temporarily reset collider
