@@ -6,6 +6,8 @@ var speed : float;
 private var increment:float;
 var isMoving : boolean;
 public static var currentDirection : float = 1;
+public static var lives : float = 3;
+public static var playerAlive : boolean = true;
 
 function Start () {
 	startPoint = transform.position;

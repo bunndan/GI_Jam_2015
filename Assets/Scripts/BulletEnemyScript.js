@@ -47,7 +47,7 @@ function OnTriggerEnter2D(obj : Collider2D) {
 	
     // If it collided with a wall
     if (name.Contains("wall")) {
-        // Destroy itself (the enemy)
+        // Destroy itself (the bullet)
         Destroy(gameObject);
         
    		// If the bullet hits a wood wall, destroy part of the wooden wall
@@ -60,5 +60,11 @@ function OnTriggerEnter2D(obj : Collider2D) {
    			Debug.Log("GAME OVER");
    			Destroy(obj.gameObject);
    		}
+    }
+    if (name.Contains("player")) {
+    	Destroy(gameObject);
+    	// Destroy the player
+    	Destroy(obj.gameObject);
+    	gameObject.GetComponent(PlayerStats2D).playerAlive = false;
     }
 }
