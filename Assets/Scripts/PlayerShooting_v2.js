@@ -1,6 +1,6 @@
 ﻿#pragma strict
 
-public var attackSpeed : long = 1;
+public var attackSpeed : long = 0.5;
 public var coolDown : long = 0;
 public var yValue : long = 0;
 public var bullet : GameObject;

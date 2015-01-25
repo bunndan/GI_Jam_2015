@@ -71,8 +71,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: -5
+  currentDirection: 3
   bullet: {fileID: 100000, guid: f5e9a38bfcfb143459f64fa88b2f61dd, type: 2}
   shootTime: 5
+  objs: []
+  SpawnPoint: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,7 +121,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3417b5c4b87912c4fa0dd4da855972b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e3deab15b73f0384da0fa87c446168c0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

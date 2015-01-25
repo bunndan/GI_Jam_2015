@@ -54,5 +54,11 @@ function OnTriggerEnter2D(obj : Collider2D) {
    		if (name.Contains("wood")) {
    			Destroy(obj.gameObject);
    		}
+   		
+   		// Game is over if the bullet hits the base
+   		if (name.Contains("base")) {
+   			Debug.Log("GAME OVER");
+   			Destroy(obj.gameObject);
+   		}
     }
 }
