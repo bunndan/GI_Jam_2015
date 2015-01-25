@@ -12,6 +12,8 @@ function Start () {
 	endPoint = transform.position;
 }
 
+
+
 function Update () {
 	if (increment <=1 && isMoving == true) {
 		increment += speed/100;
@@ -27,6 +29,15 @@ function Update () {
 	}
 	
 	if (Input.GetKey("w") && isMoving == false) {
+		
+		var rotation = Quaternion.LookRotation(new Vector3(0,0,1), new Vector3(0,0,0));
+		transform.rotation = rotation;
+		
+		/*
+		var angle = Mathf.Atan2(transform.position.x, transform.position.y) * Mathf.Rad2Deg;
+		transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+		*/
+		
 		// Cast a ray.
 		var hit: RaycastHit2D = Physics2D.Raycast(new Vector3 (transform.position.x, transform.position.y + 1.0001, transform.position.z), Vector2.up);
 		
@@ -48,6 +59,10 @@ function Update () {
 	}
 	
 	if (Input.GetKey("s") && isMoving == false) {
+		
+		rotation = Quaternion.LookRotation(new Vector3(0,0,-1), new Vector3(0,0,0));
+		transform.rotation = rotation;
+		
 		// Cast a ray.
 		var hit2: RaycastHit2D = Physics2D.Raycast(new Vector3 (transform.position.x, transform.position.y - 1.0001, transform.position.z), -Vector2.up);
 		
@@ -69,6 +84,10 @@ function Update () {
 	}
 	
 	if (Input.GetKey("a") && isMoving == false) {
+		
+		rotation = Quaternion.LookRotation(new Vector3(0,0,-1), new Vector3(-1,0,0));
+		transform.rotation = rotation;
+		
 		// Cast a ray.
 		var hit3: RaycastHit2D = Physics2D.Raycast(new Vector3 (transform.position.x - 1.0001, transform.position.y, transform.position.z), -Vector2.right);
 		
@@ -90,6 +109,10 @@ function Update () {
 	}
 	
 	if (Input.GetKey("d") && isMoving == false) {
+	
+		rotation = Quaternion.LookRotation(new Vector3(0,0,-1), new Vector3(1,0,0));
+		transform.rotation = rotation;
+		
 		// Cast a ray.
 		var hit4: RaycastHit2D = Physics2D.Raycast(new Vector3 (transform.position.x + 1.0001, transform.position.y, transform.position.z), Vector2.right);
 		

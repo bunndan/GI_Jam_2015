@@ -44,6 +44,7 @@ function randomizeDirection(dontUseNum) {
 	// Debug.Log("new direction = " + currentDirection + "  |  " + dontUseNum);
 	
 	yield WaitForSeconds (0.75);
+	
 	addVelociy();
 }
 
@@ -78,7 +79,7 @@ function addVelociy() {
     } else if (currentDirection == 2) {	// left
     	rigidbody2D.velocity.x = speed;
     	rigidbody2D.velocity.y = 0;
-    	
+		
     } else if (currentDirection == 3) {	// down
     	rigidbody2D.velocity.x = 0;
     	rigidbody2D.velocity.y = speed;
@@ -88,6 +89,7 @@ function addVelociy() {
     	rigidbody2D.velocity.y = 0;
     	
     }
+    
 }
 
 
