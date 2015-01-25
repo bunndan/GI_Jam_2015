@@ -9,20 +9,14 @@ function Start () {
 	
 	var bulletDirection = gameObject.GetComponent(PlayerStats2D).currentDirection;
 	
-	Debug.Log(bulletDirection);
-	
 	if (bulletDirection == 1) {
 		rigidbody2D.velocity.y = speed;
-		Debug.Log(bulletDirection);
 	} else if (bulletDirection == 2) {
 		rigidbody2D.velocity.x = -speed;
-		Debug.Log(bulletDirection);
 	} else if (bulletDirection == 3) {
 		rigidbody2D.velocity.y = -speed;
-		Debug.Log(bulletDirection);
 	} else if (bulletDirection == 4) {
 		rigidbody2D.velocity.x = speed;
-		Debug.Log(bulletDirection);
 	}
 }
 
@@ -30,7 +24,7 @@ function Start () {
 function OnBecameInvisible() {  
     // Destroy the bullet 
     Destroy(gameObject);
-    Debug.Log("bullet destroyed");
+    // Debug.Log("bullet destroyed");
 }
 
 // Function called when the bullet collides with another object
@@ -50,7 +44,7 @@ function OnTriggerEnter2D(obj : Collider2D) {
    		// Game is over if the bullet hits the base
    		if (name.Contains("base")) {
    			Destroy(obj.gameObject);
-			gameObject.GetComponent(GameOverScript).gameOver();
+   			GameObject.Find("Game_Over").GetComponent(GameOverScript).gameOver();
    		}
     }
 }

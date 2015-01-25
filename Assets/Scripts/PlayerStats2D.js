@@ -6,13 +6,16 @@ var speed : float;
 private var increment:float;
 var isMoving : boolean;
 public static var currentDirection : float = 1;
-public static var lives : float = 3;
+public static var lives : float = 2;
 public static var playerAlive : boolean = true;
 public static var baseAlive : boolean = true;
+
+var pickup : AudioClip;
 
 function Start () {
 	startPoint = transform.position;
 	endPoint = transform.position;
+	pickup = Resources.Load("DeathSound4", typeof(AudioClip)) as AudioClip;
 }
 
 
@@ -49,7 +52,7 @@ function Update () {
 			// Calculate the distance from the surface and the "error" relative
 			// to the floating height.
 			var distance = Mathf.Abs(hit.point.y - transform.position.y);
-			Debug.Log("raycasting - distance " + distance);
+			// Debug.Log("raycasting - distance " + distance);
 		}
 		// Allow movement only if a collision wall is not beside the unit
 		if (hit.collider == null || distance > 1.25) {
@@ -74,7 +77,7 @@ function Update () {
 			// Calculate the distance from the surface and the "error" relative
 			// to the floating height.
 			distance = Mathf.Abs(-hit2.point.y + transform.position.y);
-			Debug.Log("raycasting - distance " + distance);
+			// Debug.Log("raycasting - distance " + distance);
 		}
 		// Allow movement only if a collision wall is not beside the unit
 		if (hit2.collider == null || distance > 1.25) {
@@ -99,7 +102,7 @@ function Update () {
 			// Calculate the distance from the surface and the "error" relative
 			// to the floating height.
 			distance = Mathf.Abs(-hit3.point.x + transform.position.x);
-			Debug.Log("raycasting - distance " + distance);
+			// Debug.Log("raycasting - distance " + distance);
 		}
 		// Allow movement only if a collision wall is not beside the unit
 		if (hit3.collider == null || distance > 1.25) {
@@ -124,7 +127,7 @@ function Update () {
 			// Calculate the distance from the surface and the "error" relative
 			// to the floating height.
 			distance = Mathf.Abs(hit4.point.x - transform.position.x);
-			Debug.Log("raycasting - distance " + distance);
+			// Debug.Log("raycasting - distance " + distance);
 		}
 		// Allow movement only if a collision wall is not beside the unit
 		if (hit4.collider == null || distance > 1.25) {
@@ -143,5 +146,15 @@ function OnTriggerEnter2D(obj : Collider2D) {
     // If it collided with a wall
     if (name.Contains("wall")) {
         // Debug.Log("wallhit");
+    }
+    
+    
+    if (name.Contains("enemybullet")) {
+    	Destroy(gameObject);
+    	Destroy(obj.gameObject);
+    	gameObject.GetComponent(PlayerStats2D).playerAlive = false;
+    	
+    	//obj.gameObject.audio.Play();
+    	AudioSource.PlayClipAtPoint(pickup, transform.position);
     }
 }

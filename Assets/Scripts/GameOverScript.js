@@ -11,6 +11,5 @@ function Update () {
 }
 
 function gameOver() {
-	Debug.Log("game over 123");
-	rigidbody2D.velocity.y = 50;
+	rigidbody2D.velocity.y = 10;
 }

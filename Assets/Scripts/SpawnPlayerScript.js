@@ -19,6 +19,9 @@ function spawnPlayer() {
 	var lives       = gameObject.GetComponent(PlayerStats2D).lives;
 	var playerAlive = gameObject.GetComponent(PlayerStats2D).playerAlive;
 	var baseAlive   = gameObject.GetComponent(PlayerStats2D).baseAlive;
+	
+	Debug.Log("playerAlive = " + playerAlive + "  |  base = "+baseAlive);
+	
 	if (playerAlive == false && baseAlive == true) {
 		Debug.Log("lives = " + lives);
 		if (lives > 0) {
@@ -30,8 +33,7 @@ function spawnPlayer() {
 		    gameObject.GetComponent(PlayerStats2D).playerAlive = true;
 		} else {
 			baseAlive = false;
-			Debug.Log("Invoke GAME OVER sequence");
-			gameObject.GetComponent(GameOverScript).gameOver();
+   			GameObject.Find("Game_Over").GetComponent(GameOverScript).gameOver();
 		}
 	}
 }
