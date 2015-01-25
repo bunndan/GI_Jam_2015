@@ -4,14 +4,16 @@
 public var speed : int = 50;
 private var currentDirection : float = 3;
 
+// Variable to dtetermine what 
+public var fireTime : float = 3;
 
 // Function called when the enemy is created
 function Start () {  
     // Add a speed to the enemy
-    // randomizeDirection();
+    randomizeDirection();
     
-    
-    rigidbody2D.velocity.y = speed;
+    InvokeRepeating("fire", fireTime, fireTime);
+    // rigidbody2D.velocity.y = speed;
 }
 
 function randomizeDirection() {
@@ -24,6 +26,10 @@ function randomizeDirection() {
 	//Debug.Log("dir = " + currentDirection);
 }
 
+
+function fire() {
+	Debug.Log("Firing");
+}
 
 function addVelociy() {
 	// Debug.Log("Adding velocity = " + currentDirection);
@@ -113,12 +119,10 @@ function Update() {
 
 // Function called when the enemy collides with another object
 function OnTriggerEnter2D(obj : Collider2D) {
-	Debug.Log("triggerbullet1");
     var name = obj.gameObject.name;
 
     // If it collided with a bullet
     if (name == "PlayerBullet_v2(Clone)") {
-    	Debug.Log("triggerbullet");
         // Destroy itself (the enemy)
         Destroy(gameObject);
 
