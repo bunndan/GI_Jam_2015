@@ -19,9 +19,7 @@ public class PlayerShooting : MonoBehaviour {
 	}
 
 	void Fire() {
-		Rigidbody bPrefab = Instantiate (bulletPrefab, new Vector3 (transform.position.x, transform.position.y + yValue, transform.position.z), Quaternion.identity) as Rigidbody;
-
-		bPrefab.rigidbody.AddForce (Vector3.up * 500);
+		Instantiate (bulletPrefab, new Vector3 (transform.position.x, transform.position.y + yValue, transform.position.z), Quaternion.identity);
 
 		coolDown = Time.time + attackSpeed;
 	}

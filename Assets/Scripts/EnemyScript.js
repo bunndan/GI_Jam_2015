@@ -1,18 +1,24 @@
 ﻿#pragma strict
+import System.Collections.Generic;
+
 
 // Public variable that contains the speed of the enemy
 public var speed : int = 50;
-private var currentDirection : float = 3;
+public var currentDirection : float = 3;
 
-// Variable to dtetermine what 
-public var fireTime : float = 3;
+
+// Variable to store the bullet prefab
+public var bullet : GameObject;
+
+// Variable to know how fast we should shoot
+public var shootTime : float = 2;
 
 // Function called when the enemy is created
 function Start () {  
     // Add a speed to the enemy
     randomizeDirection();
     
-    InvokeRepeating("fire", fireTime, fireTime);
+    InvokeRepeating("fire", shootTime, shootTime);
     // rigidbody2D.velocity.y = speed;
 }
 
@@ -26,9 +32,25 @@ function randomizeDirection() {
 	//Debug.Log("dir = " + currentDirection);
 }
 
+var objs : GameObject [];
+     
+var SpawnPoint : Transform;
+
 
 function fire() {
-	Debug.Log("Firing");
+	if (currentDirection == 1) {
+		var childObject = Instantiate(bullet, new Vector3(transform.position.x, transform.position.y + 1.5, transform.position.z + 0.5), Quaternion.identity) as GameObject;
+		childObject.transform.parent = gameObject.transform;
+	} else if (currentDirection == 2) {
+		childObject = Instantiate(bullet, new Vector3(transform.position.x - 1.5, transform.position.y, transform.position.z + 0.5), Quaternion.identity) as GameObject;
+		childObject.transform.parent = gameObject.transform;
+	} else if (currentDirection == 3) {
+		childObject = Instantiate(bullet, new Vector3(transform.position.x, transform.position.y - 1.5, transform.position.z + 0.5), Quaternion.identity) as GameObject;
+		childObject.transform.parent = gameObject.transform;
+	} else if (currentDirection == 4) {
+		childObject = Instantiate(bullet, new Vector3(transform.position.x + 1.5, transform.position.y, transform.position.z + 0.5), Quaternion.identity) as GameObject;
+		childObject.transform.parent = gameObject.transform;
+	}
 }
 
 function addVelociy() {
