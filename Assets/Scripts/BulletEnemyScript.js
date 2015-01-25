@@ -11,20 +11,20 @@ function Start () {
 	
 	// var bulletDirection = gameObject.GetComponent(PlayerStats2D).currentDirection;
 	
-	Debug.Log("enemy bullet = " + bulletDirection);
+	// Debug.Log("enemy bullet = " + bulletDirection);
 	
 	if (bulletDirection == 1) {
 		this.rigidbody2D.velocity.y = speed;
-		Debug.Log("shoot up");
+		// Debug.Log("shoot up");
 	} else if (bulletDirection == 2) {
 		this.rigidbody2D.velocity.x = -speed;
-		Debug.Log("shoot left");
+		// Debug.Log("shoot left");
 	} else if (bulletDirection == 3) {
 		this.rigidbody2D.velocity.y = -speed;
-		Debug.Log("shoot down");
+		// Debug.Log("shoot down");
 	} else if (bulletDirection == 4) {
 		this.rigidbody2D.velocity.x = speed;
-		Debug.Log("shoot right");
+		// Debug.Log("shoot right");
 	}
 	
 	/*
@@ -38,7 +38,7 @@ function Start () {
 function OnBecameInvisible() {  
     // Destroy the bullet 
     Destroy(gameObject);
-    Debug.Log("bullet destroyed");
+    // Debug.Log("bullet destroyed");
 }
 
 // Function called when the bullet collides with another object

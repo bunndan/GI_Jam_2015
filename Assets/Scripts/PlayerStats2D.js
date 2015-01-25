@@ -111,12 +111,11 @@ function Update () {
 	}
 }
 
-// Function called when the bullet collides with another object
 function OnTriggerEnter2D(obj : Collider2D) {  
     var name = obj.gameObject.name.ToLower();
 	
     // If it collided with a wall
     if (name.Contains("wall")) {
-        Debug.Log("wallhit");
+        // Debug.Log("wallhit");
     }
 }

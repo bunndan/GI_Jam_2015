@@ -1,6 +1,4 @@
 ﻿#pragma strict
-import System.Collections.Generic;
-
 
 // Public variable that contains the speed of the enemy
 public var speed : int = 50;
@@ -14,22 +12,39 @@ public var bullet : GameObject;
 public var shootTime : float = 2;
 
 // Function called when the enemy is created
-function Start () {  
-    // Add a speed to the enemy
+function Start () {
     randomizeDirection();
+    this.transform.FindChild("FrontCollider").gameObject.GetComponent(EnemyColliderScript).colliderChange();
     
     InvokeRepeating("fire", shootTime, shootTime);
-    // rigidbody2D.velocity.y = speed;
 }
 
 function randomizeDirection() {
+	rigidbody2D.velocity.x = 0;
+	rigidbody2D.velocity.y = 0;
+	
 	currentDirection = Mathf.Floor(Random.Range(1,5));
 	if (currentDirection == 5) {
 		currentDirection = 4;
 	}
+	
+	yield WaitForSeconds (2);
+	addVelociy();
+}
+
+function randomizeDirection(dontUseNum) {
 	rigidbody2D.velocity.x = 0;
 	rigidbody2D.velocity.y = 0;
-	//Debug.Log("dir = " + currentDirection);
+	do {
+		currentDirection = Mathf.Floor(Random.Range(1,5));
+		if (currentDirection == 5) {
+			currentDirection = 4;
+		}
+	} while (currentDirection == dontUseNum);
+	// Debug.Log("new direction = " + currentDirection + "  |  " + dontUseNum);
+	
+	yield WaitForSeconds (0.75);
+	addVelociy();
 }
 
 var objs : GameObject [];
@@ -54,6 +69,7 @@ function fire() {
 }
 
 function addVelociy() {
+	// Debug.Log("moving");
 	// Debug.Log("Adding velocity = " + currentDirection);
 	if (currentDirection == 1) {		// up
     	rigidbody2D.velocity.x = 0;
@@ -74,6 +90,8 @@ function addVelociy() {
     }
 }
 
+
+/*
 function Update() {
 	addVelociy();
 	
@@ -138,6 +156,12 @@ function Update() {
 		}
 	}
 }
+*/
+
+function Update() {
+//	addVelociy();
+}
+
 
 // Function called when the enemy collides with another object
 function OnTriggerEnter2D(obj : Collider2D) {
@@ -150,8 +174,10 @@ function OnTriggerEnter2D(obj : Collider2D) {
 
         // And destroy the bullet
         Destroy(obj.gameObject);
+        
+        gameObject.GetComponent(GameManagerScript).numOfEnemies--;
     }
-}	
+}
 
 // Gets called when the object goes out of the screen
 function OnBecameInvisible() {  
