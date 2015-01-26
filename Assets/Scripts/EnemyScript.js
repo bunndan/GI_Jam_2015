@@ -16,6 +16,7 @@ var spriteImageDown : Sprite;
 var spriteImageLeft : Sprite;
 var spriteImageRight : Sprite;
 
+var explodeSound : AudioClip;
 
 // Function called when the enemy is created
 function Start () {
@@ -54,6 +55,19 @@ function randomizeDirection(dontUseNum) {
 	} while (currentDirection == dontUseNum);
 	// Debug.Log("new direction = " + currentDirection + "  |  " + dontUseNum);
 	
+	if (currentDirection == 1) {		// up
+	    GetComponent(SpriteRenderer).sprite = spriteImageUp;
+    	
+    } else if (currentDirection == 2) {	// left
+	    GetComponent(SpriteRenderer).sprite = spriteImageLeft;
+		
+    } else if (currentDirection == 3) {	// down
+	    GetComponent(SpriteRenderer).sprite = spriteImageDown;
+    	
+    } else if (currentDirection == 4) {	// right
+	    GetComponent(SpriteRenderer).sprite = spriteImageRight;
+    	
+    }
 	yield WaitForSeconds (0.75);
 	
 	addVelociy();
@@ -84,22 +98,18 @@ function addVelociy() {
 	// Debug.Log("moving");
 	// Debug.Log("Adding velocity = " + currentDirection);
 	if (currentDirection == 1) {		// up
-	    GetComponent(SpriteRenderer).sprite = spriteImageUp;
     	rigidbody2D.velocity.x = 0;
     	rigidbody2D.velocity.y = -speed;
     	
     } else if (currentDirection == 2) {	// left
-	    GetComponent(SpriteRenderer).sprite = spriteImageLeft;
     	rigidbody2D.velocity.x = speed;
     	rigidbody2D.velocity.y = 0;
 		
     } else if (currentDirection == 3) {	// down
-	    GetComponent(SpriteRenderer).sprite = spriteImageDown;
     	rigidbody2D.velocity.x = 0;
     	rigidbody2D.velocity.y = speed;
     	
     } else if (currentDirection == 4) {	// right
-	    GetComponent(SpriteRenderer).sprite = spriteImageRight;
     	rigidbody2D.velocity.x = -speed;
     	rigidbody2D.velocity.y = 0;
     	
@@ -193,6 +203,8 @@ function OnTriggerEnter2D(obj : Collider2D) {
         Destroy(obj.gameObject);
         
         gameObject.GetComponent(GameManagerScript).numOfEnemies--;
+		explodeSound = Resources.Load("explodeSoundv2", typeof(AudioClip)) as AudioClip;
+		AudioSource.PlayClipAtPoint(explodeSound, transform.position);
     }
 }
 

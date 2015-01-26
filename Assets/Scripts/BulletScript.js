@@ -3,6 +3,9 @@
 // Public variable 
 public var speed : int = 6;
 
+var bulletSound  : AudioClip;
+var explodeSound : AudioClip;
+
 // Gets called once when the bullet is created
 function Start () {
 	// Set the velocity to make the bullet move depending on the direction of the ship
@@ -18,6 +21,9 @@ function Start () {
 	} else if (bulletDirection == 4) {
 		rigidbody2D.velocity.x = speed;
 	}
+	
+	bulletSound = Resources.Load("shootSound_v2", typeof(AudioClip)) as AudioClip;
+	AudioSource.PlayClipAtPoint(bulletSound, transform.position);
 }
 
 // Gets called when the object goes out of the screen
@@ -43,6 +49,13 @@ function OnTriggerEnter2D(obj : Collider2D) {
    		
    		// Game is over if the bullet hits the base
    		if (name.Contains("base")) {
+        	Destroy(gameObject);
+        	Destroy(GameObject.Find("Player"));
+           	gameObject.GetComponent(PlayerStats2D).playerAlive = false;
+			gameObject.GetComponent(PlayerStats2D).lives = 0;
+			
+   			explodeSound = Resources.Load("explodeSoundv2", typeof(AudioClip)) as AudioClip;
+			AudioSource.PlayClipAtPoint(explodeSound, transform.position);
    			Destroy(obj.gameObject);
    			GameObject.Find("Game_Over").GetComponent(GameOverScript).gameOver();
    		}

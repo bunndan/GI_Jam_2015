@@ -154,7 +154,6 @@ function OnTriggerEnter2D(obj : Collider2D) {
     	Destroy(obj.gameObject);
     	gameObject.GetComponent(PlayerStats2D).playerAlive = false;
     	
-    	//obj.gameObject.audio.Play();
     	AudioSource.PlayClipAtPoint(pickup, transform.position);
     }
 }
