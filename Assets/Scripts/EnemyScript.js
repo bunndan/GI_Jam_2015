@@ -203,6 +203,7 @@ function OnTriggerEnter2D(obj : Collider2D) {
         Destroy(obj.gameObject);
         
         gameObject.GetComponent(GameManagerScript).numOfEnemies--;
+        gameObject.GetComponent(GameManagerScript).score++;
 		explodeSound = Resources.Load("explodeSoundv2", typeof(AudioClip)) as AudioClip;
 		AudioSource.PlayClipAtPoint(explodeSound, transform.position);
     }

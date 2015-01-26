@@ -9,6 +9,8 @@ function OnTriggerEnter2D(obj : Collider2D) {
         
         gameObject.GetComponent(PlayerStats2D).lives = 3;
         gameObject.GetComponent(PlayerStats2D).baseAlive = true;
-        
+        gameObject.GetComponent(SpawnPlayerGameOverScript).continueSpawning = true;
+        gameObject.GetComponent(GameManagerScript).score = 0;
+
     }
 }

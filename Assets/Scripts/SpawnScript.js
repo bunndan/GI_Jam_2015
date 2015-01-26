@@ -16,9 +16,9 @@ function Start() {
 // New function to spawn an enemy
 function addEnemy() {
 	
-	var randomNum = Mathf.Floor(Random.Range(1,2));
+	var randomNum = Mathf.Floor(Random.Range(1,5));
 	var nums = gameObject.GetComponent(GameManagerScript).numOfEnemies;
-	if (randomNum == 1 && nums < totalNumberOfEnemies) {
+	if (randomNum <= 3 && nums < totalNumberOfEnemies) {
 		var spawnPoint = transform.position;
 		
 	    // Create an enemy at the 'spawnPoint' position

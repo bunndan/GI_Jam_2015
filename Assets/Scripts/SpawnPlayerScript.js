@@ -31,6 +31,7 @@ function spawnPlayer() {
 		    // Create a player at the 'spawnPoint' position
 		    Instantiate(player, spawnPoint, Quaternion.identity);
 		    gameObject.GetComponent(PlayerStats2D).playerAlive = true;
+		    gameObject.GetComponent(PlayerStats2D).currentDirection = 1;
 		} else {
 			baseAlive = false;
    			GameObject.Find("Game_Over").GetComponent(GameOverScript).gameOver();

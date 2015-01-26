@@ -23342,6 +23342,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1754385429}
   - 82: {fileID: 1754385428}
+  - 114: {fileID: 1754385430}
   m_Layer: 0
   m_Name: Game_Manager
   m_TagString: Untagged
@@ -23419,6 +23420,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
+--- !u!114 &1754385430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1754385427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd3768c58eb4fe743ada1be9657fe6da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  countDownSeconds: 62
+  text: 
 --- !u!1 &1756979544
 GameObject:
   m_ObjectHideFlags: 0
@@ -25038,7 +25052,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1857597644}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.8716011, y: -10.849144, z: 19.2700005}
+  m_LocalPosition: {x: 14.8028564, y: -5.9088974, z: 19.2700005}
   m_LocalScale: {x: 20.5482883, y: 20.5483131, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25608,7 +25622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startPoint: {x: 0, y: 0, z: 0}
   endPoint: {x: 0, y: 0, z: 0}
-  speed: 6
+  speed: 3
   isMoving: 0
   pickup: {fileID: 0}
 --- !u!82 &1942070883
@@ -26786,6 +26800,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 100000, guid: f0773cab9267c224994af467c536c22c, type: 2}
   spawnTime: 2
+  continueSpawning: 1
 --- !u!114 &2015088219
 MonoBehaviour:
   m_ObjectHideFlags: 0

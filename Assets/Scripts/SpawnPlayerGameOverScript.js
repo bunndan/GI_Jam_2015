@@ -5,7 +5,7 @@ public var player : GameObject;
 
 // Variable to know how fast we should create new enemies
 public var spawnTime : float = 6;
-
+public var continueSpawning : boolean = true;
 function Start() {
     InvokeRepeating("spawnPlayer", spawnTime, spawnTime);
 }
@@ -20,12 +20,14 @@ function spawnPlayer() {
 	
 	//Debug.Log("playerAlive = " + playerAlive + "  |  base = "+baseAlive);
 	
-	if (baseAlive != true || lives == 0) {
+	if (baseAlive != true || lives <= 0) {
+		if (continueSpawning == true) {
 		    var spawnPoint = transform.position;
 			
 		    // Create a player at the 'spawnPoint' position
 		    Instantiate(player, spawnPoint, Quaternion.identity);
 		    gameObject.GetComponent(PlayerStats2D).playerAlive = true;
-		
+		    continueSpawning = false;
+		}
 	}
 }
