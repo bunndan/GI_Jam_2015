@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Unity Web Player | Blocks of Rage</title>
+		<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+		<script type="text/javascript">
+		<!--
+		var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+		if (document.location.protocol == 'https:')
+			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+		-->
+		</script>
+		<script type="text/javascript">
+		<!--
+			var config = {
+				width: 1400,
+				height: 900,
+				params: { enableDebugging:"0" }
+				
+			};
+			var u = new UnityObject2(config);
+			
+			jQuery(function() {
+
+				var $missingScreen = jQuery("#unityPlayer").find(".missing");
+				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+				$missingScreen.hide();
+				$brokenScreen.hide();
+
+				u.observeProgress(function (progress) {
+					switch(progress.pluginStatus) {
+						case "broken":
+							$brokenScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$brokenScreen.show();
+						break;
+						case "missing":
+							$missingScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$missingScreen.show();
+						break;
+						case "installed":
+							$missingScreen.remove();
+						break;
+						case "first":
+						break;
+					}
+				});
+				u.initPlugin(jQuery("#unityPlayer")[0], "Blocks-of-Rage.unity3d");
+			});
+		-->
+		</script>
+		<style type="text/css">
+		<!--
+		body {
+			font-family: Helvetica, Verdana, Arial, sans-serif;
+			background-color: black;
+			color: white;
+			text-align: center;
+		}
+		a:link, a:visited {
+			color: #bfbfbf;
+		}
+		a:active, a:hover {
+			color: #bfbfbf;
+		}
+		p.header {
+			font-size: small;
+		}
+		p.header span {
+			font-weight: bold;
+		}
+		p.footer {
+			font-size: x-small;
+		}
+		div.content {
+			margin: auto;
+			// width: 1400px;
+		}
+		div.broken,
+		div.missing {
+			margin: auto;
+			position: relative;
+			top: 50%;
+			width: 193px;
+		}
+		div.broken a,
+		div.missing a {
+			height: 63px;
+			position: relative;
+			top: -31px;
+		}
+		div.broken img,
+		div.missing img {
+			border-width: 0px;
+		}
+		div.broken {
+			display: none;
+		}
+		div#unityPlayer {
+			cursor: default;
+			height: 900px;
+			// width: 1400px;
+		}
+		-->
+		</style>
+	</head>
+	<body>
+		<p class="header"><span>Unity Web Player | </span>Blocks of Rage</p>
+		<div class="content">
+			<div>
+				<div id="unityPlayer" style="float: left; background-color: white; margin: auto;">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+				</div>
+				<div style="float: left; text-align: left; margin: 75px 0 0 75px;">
+					<b>Controls:</b><br />
+					 &nbsp;W = Move up<br />
+					 &nbsp;A = Move left<br />
+					 &nbsp;S = Move down<br />
+					 &nbsp;D = Move right<br />
+					 &nbsp;SPACE = Shoot<br /><br />
+					 
+					<b>Instructions:</b><br />&nbsp;
+					 Protect the GREEN STAR in the center from <br />&nbsp;
+					 the infinitely spawning enemies.<br /><br />&nbsp;
+					 Watch out! You can destroy it too.<br /><br /><br />
+					 
+					 Music by Waterflame, from:<br />&nbsp;
+					 <a href="http://www.newgrounds.com/audio/listen/568699" target="_blank"/>Newgrounds: -Hexagon Force-</a><br />&nbsp;
+					 We take no credit for their awesome music.<br /><br /><br />
+					 
+					 Made by Brandon Ma and Chris Ng for the <br />&nbsp;
+					 <a href="http://globalgamejam.org/" target="_blank">Global Game Jam 2015</a> and the <a href="http://theplayfulpixel.ca/gijam/themainevent/" target="_blank">GI Jam</a>.
+				</div>
+			</div>
+		</div>
+		<p class="footer" style="clear: both;">&laquo; created with <a href="http://unity3d.com/unity/" title="Go to unity3d.com">Unity</a> &raquo;</p>
+	</body>
+</html>

@@ -1206,7 +1206,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578503778}
-  m_RootOrder: 2
+  m_RootOrder: 3
 --- !u!114 &49733664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1219,8 +1219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 100002, guid: 7211ac9a366734b4bb08395f433f87c9, type: 2}
-  spawnTime: 5
-  totalNumberOfEnemies: 3
+  spawnTime: 4
+  totalNumberOfEnemies: 4
 --- !u!114 &49733665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9988,7 +9988,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578503778}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!114 &806716169
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10001,8 +10001,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 100002, guid: 7211ac9a366734b4bb08395f433f87c9, type: 2}
-  spawnTime: 5
-  totalNumberOfEnemies: 3
+  spawnTime: 4
+  totalNumberOfEnemies: 4
 --- !u!114 &806716170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10878,11 +10878,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b4ba779ef534da448bffdd124712d404, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11400002, guid: b4ba779ef534da448bffdd124712d404, type: 2}
       propertyPath: totalNumberOfEnemies
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: b4ba779ef534da448bffdd124712d404, type: 2}
       propertyPath: m_Sprite
@@ -10892,6 +10892,10 @@ Prefab:
     - target: {fileID: 400000, guid: b4ba779ef534da448bffdd124712d404, type: 2}
       propertyPath: m_LocalScale.x
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400002, guid: b4ba779ef534da448bffdd124712d404, type: 2}
+      propertyPath: spawnTime
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b4ba779ef534da448bffdd124712d404, type: 2}
@@ -20643,7 +20647,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578503778}
-  m_RootOrder: 3
+  m_RootOrder: 0
 --- !u!114 &1544298306
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20656,8 +20660,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 100002, guid: 7211ac9a366734b4bb08395f433f87c9, type: 2}
-  spawnTime: 5
-  totalNumberOfEnemies: 3
+  spawnTime: 4
+  totalNumberOfEnemies: 4
 --- !u!114 &1544298307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21298,10 +21302,10 @@ Transform:
   m_LocalPosition: {x: 14.5034342, y: -9.01909256, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1544298305}
   - {fileID: 2066357473}
   - {fileID: 806716168}
   - {fileID: 49733663}
-  - {fileID: 1544298305}
   m_Father: {fileID: 0}
   m_RootOrder: 3
 --- !u!1 &1582038231
@@ -27362,7 +27366,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1578503778}
-  m_RootOrder: 0
+  m_RootOrder: 1
 --- !u!114 &2066357474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27389,8 +27393,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 100002, guid: 7211ac9a366734b4bb08395f433f87c9, type: 2}
-  spawnTime: 5
-  totalNumberOfEnemies: 3
+  spawnTime: 4
+  totalNumberOfEnemies: 4
 --- !u!61 &2066357476
 BoxCollider2D:
   m_ObjectHideFlags: 0
